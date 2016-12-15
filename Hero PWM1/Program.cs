@@ -30,13 +30,14 @@ namespace Hero_PWM1
             {
                 /* get gamepad info */
                 _gamepad.GetAllValues(ref val);
+                //use the cross controller to change the servo position
                 cross = val.pov;
                 switch (cross)
                 {
                     case 0:// N
                         delta = 10;
                         break;
-                    case 1: // NE, 2 = E, 3 = SE, 4 = S, 5 = SW,  6 = W, and 7 = NW.
+                    case 1: // NE
                         delta = 100;
                         break;
                     case 7:// NW
@@ -45,7 +46,7 @@ namespace Hero_PWM1
                     case 4:// S
                         delta = -10;
                         break;
-                    case 3: // SE, 2 = E, 3 = SE, 4 = S, 5 = SW,  6 = W, and 7 = NW.
+                    case 3: // SE
                         delta = -100;
                         break;
                     case 5:// SW
